@@ -1,0 +1,42 @@
+<head>
+  <script src="https://kit.fontawesome.com/2496961374.js" crossorigin="anonymous"></script>
+</head>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Brand</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse gap" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+        <li class="nav-item ">
+          <a class="nav-link" href="/shopping-cart/"> <i class="fa-solid fa-cart-shopping"></i> &nbsp; Shopping cart
+            <span class="badge bg-primary">{{session.cart.totalQty}}</span>
+          </a>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <i class="fa-solid fa-user"></i> &nbsp; User management
+          </a>
+          <ul class="dropdown-menu">
+            {{#if login}}
+                    <li><a class="dropdown-item" href="/user/profile">User Account</a></li>
+                    <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+                  {{else }}
+                      <li><a class="dropdown-item"  href="/user/signup">Sign up</a></li>
+                      <li><a class="dropdown-item" href="/user/signin">Sign in</a></li>
+           
+
+            {{/if }}
+          
+          </ul>
+        </li>
+        
+      </ul>
+     
+    </div>
+  </div>
+</nav>
+
